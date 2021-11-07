@@ -1,12 +1,23 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+
+  const seenNums = {};
+
+  for (num of array) {
+    const compliment = target - num;
+    if (seenNums[compliment]) {
+      return true;
+    } else {
+      seenNums[num] = true;
+    }
+  }
+  return false;
 }
 
-/* 
+/*
   Write the Big O time complexity of your function here
 */
 
-/* 
+/*
   Add your pseudocode here
 */
 
